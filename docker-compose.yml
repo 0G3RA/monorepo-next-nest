@@ -1,0 +1,11 @@
+name: plinks-pw
+networks:
+  plinks-pw:
+    name: plinks-pw
+services:
+  plinks-pw-postgres:
+    extends:
+      file: apps/api/docker-compose.yml
+      service: plinks-pw-postgres
+volumes:
+  plinks-pw-postgres:

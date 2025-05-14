@@ -15,7 +15,9 @@
     "dev": "pnpm --parallel -r run dev",
     "tsc": "pnpm --parallel -r run tsc",
     "lint": "pnpm --parallel -r run lint",
-    "build": "pnpm --parallel -r run build"
+    "build": "pnpm --parallel -r run build",
+    "compose": "docker-compose down --remove-orphans && docker-compose up --build --force-recreate",
+    "compose:d": "npm run compose -- -d"
   },
   "dependencies": {
     "@plinks-pw/domain": "workspace:^"
