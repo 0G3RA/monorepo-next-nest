@@ -11,6 +11,12 @@
     "email": "plinks@gmail.com",
     "url": "https://www.linkedin.com/in/MY_LINKEDIN_PAGE_URL"
   },
+  "scripts": {
+    "dev": "pnpm --parallel -r run dev",
+    "tsc": "pnpm --parallel -r run tsc",
+    "lint": "pnpm --parallel -r run lint",
+    "build": "pnpm --parallel -r run build"
+  },
   "dependencies": {
     "@plinks-pw/domain": "workspace:^"
   }
