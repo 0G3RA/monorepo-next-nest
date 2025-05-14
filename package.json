@@ -1,0 +1,14 @@
+{
+  "name": "plinks-pw",
+  "private": true,
+  "version": "1.0.0",
+  "displayName": "Plink's Password Manager",
+  "description": "A simple description about the project",
+  "homepage": "https://github.com/plinks-pw",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Plink's",
+    "email": "plinks@gmail.com",
+    "url": "https://www.linkedin.com/in/MY_LINKEDIN_PAGE_URL"
+  }
+}
