@@ -5,7 +5,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "compile": "tsc --noEmit"
+    "compile": "tsc --noEmit",
+    "lint": "gts lint -- --fix",
+    "clean": "gts clean",
+    "fix": "gts fix"
   },
   "displayName": "plinks-pw - Domain layer",
   "description": "Domain layer for plinks-pw",
@@ -17,6 +20,8 @@
     "url": "https://www.linkedin.com/in/MY_LINKEDIN_PAGE_URL"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "gts": "^6.0.2",
+    "@types/node": "^22.7.5"
   }
 }
