@@ -1,5 +1,5 @@
 {
-  "name": "@{{ROOT_PROJECT_NAME}}/domain",
+  "name": "@plinks-pw/domain",
   "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -7,8 +7,8 @@
     "build": "tsc",
     "compile": "tsc --noEmit"
   },
-  "displayName": "{{ROOT_PROJECT_DISPLAY_NAME}} - Domain layer",
-  "description": "{{PROJECT_MINIMAL_DESCRIPTION}}",
+  "displayName": "plinks-pw - Domain layer",
+  "description": "Domain layer for plinks-pw",
   "version": "0.1.0",
   "license": "UNLICENSED",
   "author": {

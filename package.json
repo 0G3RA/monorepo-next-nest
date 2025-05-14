@@ -10,5 +10,8 @@
     "name": "Plink's",
     "email": "plinks@gmail.com",
     "url": "https://www.linkedin.com/in/MY_LINKEDIN_PAGE_URL"
+  },
+  "dependencies": {
+    "@plinks-pw/domain": "workspace:^"
   }
 }

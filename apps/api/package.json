@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "@{{ROOT_PROJECT_NAME}}/api",
-  "displayName": "{{ROOT_PROJECT_DISPLAY_NAME}} - Backend application using NestJS",
-  "description": "{{PROJECT_MINIMAL_DESCRIPTION}}",
+  "name": "@plinks-pw/api",
+  "displayName": "plinks-pw - Backend application using NestJS",
+  "description": "Backend application for plinks-pw",
   "license": "UNLICENSED",
   "scripts": {
     "compile": "tsc --noEmit",
