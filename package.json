@@ -2,6 +2,7 @@
   "name": "plinks-pw",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@10.11.0",
   "displayName": "Plink's Password Manager",
   "description": "A simple description about the project",
   "homepage": "https://github.com/plinks-pw",

@@ -1,11 +1,34 @@
 name: plinks-pw
+
 networks:
   plinks-pw:
     name: plinks-pw
+
 services:
-  plinks-pw-postgres:
+  postgres:
     extends:
       file: apps/api/docker-compose.yml
-      service: plinks-pw-postgres
+      service: postgres
+
+  api:
+    extends:
+      file: apps/api/docker-compose.yml
+      service: api
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        NODE_ENV: production
+    container_name: plinks-pw-web
+    ports: ['${WEB_PORT:?}:3000']
+    depends_on:
+      - api
+    environment:
+      - NEXT_PUBLIC_API_URL=http://api:3001
+      - NODE_ENV=production
+    networks: ['plinks-pw']
+
 volumes:
   plinks-pw-postgres:

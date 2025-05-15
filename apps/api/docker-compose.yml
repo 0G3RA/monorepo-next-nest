@@ -1,9 +1,11 @@
-name: plinks-pw
+name: plinks-pw-api
+
 networks:
   plinks-pw:
     name: plinks-pw
+
 services:
-  plinks-pw-postgres:
+  postgres:
     image: postgres
     hostname: postgres
     container_name: plinks-pw-postgres
@@ -19,5 +21,23 @@ services:
       interval: 10s
       timeout: 5s
       start_period: 10s
+
+  api:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+      args:
+        APP: api
+        NODE_ENV: production
+    container_name: plinks-pw-api
+    ports: ['${API_PORT:?}:3000']
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      - NODE_ENV=production
+    networks: ['plinks-pw']
+
 volumes:
-  monorepo-postgres:
+  plinks-pw-postgres:
