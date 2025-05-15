@@ -19,7 +19,6 @@ services:
       interval: 10s
       timeout: 5s
       start_period: 10s
-
   plinks-pw-api:
     build:
       context: .
@@ -28,13 +27,26 @@ services:
         APP: api
         NODE_ENV: production
     container_name: plinks-pw-api
-    ports: ['${API_PORT:?}:3000']
+    ports: ['${API_PORT:?}:3001']
     depends_on:
       plinks-pw-postgres:
         condition: service_healthy
     environment:
       - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@plinks-pw-postgres:5432/${POSTGRES_DB}
       - NODE_ENV=production
+    networks: ['plinks-pw']    
+  plinks-pw-web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        NODE_ENV: production
+    container_name: plinks-pw-web
+    ports: ['${WEB_PORT:?}:3000']  # Зовнішній порт змінний, внутрішній залишається 3000
+    environment:
+      - NEXT_PUBLIC_API_URL=http://plinks-pw-api:3001
+      - NODE_ENV=production
+      - PORT=3000  # Додаємо явне вказання порту для Next.js
     networks: ['plinks-pw']
 
 volumes:
