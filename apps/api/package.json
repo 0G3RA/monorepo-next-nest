@@ -13,10 +13,7 @@
     "compose": "docker-compose down --remove-orphans && docker-compose up --build --force-recreate",
     "compose:d": "npm run compose -- -d",
     "clean": "gts clean",
-    "fix": "gts fix",
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "fix": "gts fix"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.1",
@@ -69,5 +66,6 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
